@@ -8,10 +8,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "jmlim_board")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Getter
 @EqualsAndHashCode(of = {"id"})
-@ToString(of = {"id", "writer"})
+@ToString(of = {"id", "writer", "title"})
 public class Board extends BaseEntity {
 
     @Id
