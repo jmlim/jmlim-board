@@ -6,7 +6,7 @@ import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "jmlim_board")
+@Table(name = "jmlim_board_")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @Getter
@@ -31,6 +31,19 @@ public class Board extends BaseEntity {
 
     @Builder
     public Board(String writer, String title, String content) {
+        this.writer = writer;
+        this.title = title;
+        this.content = content;
+    }
+
+    /**
+     * entity update
+     *
+     * @param writer
+     * @param title
+     * @param content
+     */
+    public void update(String writer, String title, String content) {
         this.writer = writer;
         this.title = title;
         this.content = content;
