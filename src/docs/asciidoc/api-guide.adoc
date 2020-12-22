@@ -1,0 +1,78 @@
+= API 문서 version v1
+임정묵;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+[[overview]]
+= API 정보
+
+== 게시판 API
+게시판 API 이다.
+
+== API URL 정보.
+local: http://127.0.0.1:8080
+
+[[overview-http-verbs]]
+== HTTP 동사
+
+본 REST API에서 사용하는 HTTP 동사(verbs)는 가능한한 표준 HTTP와 REST 규약을 따릅니다.
+
+|===
+| 동사 | 용례
+
+| `GET`
+| 리소스를 가져올 때 사용
+
+| `POST`
+| 새 리소스를 만들 때 사용
+
+| `PUT`
+| 기존 리소스를 수정할 때 사용
+
+| `PATCH`
+| 기존 리소스의 일부를 수정할 때 사용
+
+| `DELETE`
+| 기존 리소스를 삭제할 떄 사용
+|===
+
+[[overview-http-status-codes]]
+== HTTP 상태 코드
+
+본 REST API에서 사용하는 HTTP 상태 코드는 가능한한 표준 HTTP와 REST 규약을 따릅니다.
+
+|===
+| 상태 코드 | 용례
+
+| `200 OK`
+| 요청을 성공적으로 처리함
+
+| `400 Bad Request`
+| 잘못된 요청을 보낸 경우. 응답 본문에 더 오류에 대한 정보가 담겨있다.
+
+| `401 Unauthorized`
+| 인증되지 않은 요청.
+
+| `404 Not Found`
+| 요청한 리소스가 없음.
+
+| `503 Service Unavailable`
+|  서비스 불가.
+|===
+
+== 게시판 API
+
+=== 게시판 정보 조회
+operation::get-all-board[snippets='curl-request,http-request,http-response,request-body,response-body']
+=== 게시판 정보 생성
+operation::create-board[snippets='curl-request,http-request,http-response,request-body,response-body']
+=== 게시판 정보 수정
+operation::update-board[snippets='curl-request,http-request,http-response,request-body,response-body']
+=== 게시판 정보 삭제
+operation::delete-board[snippets='curl-request,http-request,http-response,request-body,response-body']

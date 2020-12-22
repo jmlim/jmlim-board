@@ -15,7 +15,7 @@ public class BoardWebConfiguration implements WebMvcConfigurer {
         converters.stream()
                 .filter(converter -> converter instanceof MappingJackson2HttpMessageConverter)
                 .findFirst()
-                .ifPresent(converter -> ((MappingJackson2HttpMessageConverter) converter).setDefaultCharset(Charset.defaultCharset()));
+                .ifPresent(converter -> ((MappingJackson2HttpMessageConverter) converter).setDefaultCharset(Charset.forName("UTF-8")));
     }
 
 }
