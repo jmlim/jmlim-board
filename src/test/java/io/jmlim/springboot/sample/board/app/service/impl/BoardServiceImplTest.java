@@ -30,14 +30,14 @@ class BoardServiceImplTest {
 
     @Test
     void save_update_delete() {
-        Long id = boardService.save(BoardSaveRequest.builder().writer("jmlim")
+        BoardResponse save = boardService.save(BoardSaveRequest.builder().writer("jmlim")
                 .title("타이틀")
                 .content("글글긅ㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌ").build());
-        System.out.println(id);
-        Long updateId = boardService.update(id, BoardSaveRequest.builder().writer("jmlim")
+        System.out.println(save);
+        BoardResponse update = boardService.update(save.getId(), BoardSaveRequest.builder().writer("jmlim")
                 .title("타이틀 업데이트")
                 .content("글글긅ㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌㅌ").build());
-        boardService.delete(updateId);
+        boardService.delete(update.getId());
     }
 
 

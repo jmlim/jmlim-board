@@ -9,9 +9,9 @@ public interface BoardService {
 
     BoardResponse findById(Long id);
 
-    Long save(BoardSaveRequest request);
+    BoardResponse save(BoardSaveRequest request);
 
-    Long update(Long id, BoardSaveRequest request);
+    BoardResponse update(Long id, BoardSaveRequest request);
 
     void delete(Long id);
 

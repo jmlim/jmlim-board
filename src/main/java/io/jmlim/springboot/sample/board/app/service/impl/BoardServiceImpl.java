@@ -32,17 +32,18 @@ public class BoardServiceImpl implements BoardService {
 
     @Transactional
     @Override
-    public Long save(BoardSaveRequest request) {
-        return boardRepository.save(request.toEntity()).getId();
+    public BoardResponse save(BoardSaveRequest request) {
+        Board save = boardRepository.save(request.toEntity());
+        return new BoardResponse(save);
     }
 
     @Transactional
     @Override
-    public Long update(Long id, BoardSaveRequest request) {
+    public BoardResponse update(Long id, BoardSaveRequest request) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
         board.update(request.getWriter(), request.getTitle(), request.getContent());
-        return id;
+        return new BoardResponse(board);
     }
 
     @Transactional
