@@ -56,7 +56,7 @@ class BoardServiceImplTest {
         System.out.println(number);
         System.out.println(boards);
 
-        assertThat(totalPages).isEqualTo(100000);
+        assertThat(totalPages).isEqualTo(100001);
         assertThat(boards).hasSize(10);
     }
 }

@@ -58,9 +58,7 @@ public class BoardServiceImpl implements BoardService {
     public Page<BoardResponse> findByPaging(Pageable pageable) {
         List<BoardResponse> boardResponses = boardRepositorySupport.findByPagingConveringIndex(pageable);
         long totalCount = boardRepositorySupport.findTotalCount();
-        int pageSize = pageable.getPageSize();
-        long totalPages = totalCount / pageSize;
-        Page<BoardResponse> page = new PageImpl<>(boardResponses, pageable, totalPages);
+        Page<BoardResponse> page = new PageImpl<>(boardResponses, pageable, totalCount);
         return page;
     }
 }
