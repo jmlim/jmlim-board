@@ -26,7 +26,7 @@ public class BoardRestController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<BoardResponse>> getAll(@PageableDefault(page = 1, size = 10) Pageable pageable) {
+    public ResponseEntity<Page<BoardResponse>> getAll(@PageableDefault Pageable pageable) {
         return ResponseEntity.ok(boardService.findByPaging(pageable));
     }
 

@@ -40,7 +40,8 @@ public class BoardRepositorySupport extends QuerydslRepositorySupport {
         List<Long> ids = queryFactory
                 .select(board.id)
                 .from(board)
-                .where(board.createdDate.after(LocalDateTime.of(2020, 01, 01, 00, 00, 00)))
+                .where(board.createdDate
+                        .after(LocalDateTime.of(2020, 01, 01, 00, 00, 00)))
                 .orderBy(board.id.desc())
                 .limit(pageable.getPageSize())
                 .offset(pageable.getOffset())
