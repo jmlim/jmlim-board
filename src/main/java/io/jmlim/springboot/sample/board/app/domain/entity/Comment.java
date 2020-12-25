@@ -25,4 +25,10 @@ public class Comment extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "board_id")
     Board board;
+
+    @Builder
+    public Comment(String content, Board board) {
+        this.content = content;
+        this.board = board;
+    }
 }

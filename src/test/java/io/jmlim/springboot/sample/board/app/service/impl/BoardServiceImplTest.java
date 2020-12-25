@@ -59,4 +59,9 @@ class BoardServiceImplTest {
         assertThat(totalPages).isEqualTo(100001);
         assertThat(boards).hasSize(10);
     }
+
+    @Test
+    void delete() {
+        boardService.delete(1000011l);
+    }
 }
