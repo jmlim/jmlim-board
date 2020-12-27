@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -67,9 +68,11 @@ class CommentServiceImplTest {
         assertThat(responses).hasSize(10);
     }
 
+    @Transactional
     @Test
     void delete() {
-        // commentService.delete(1l);
+        long commentId = 8543;
+        commentService.delete(commentId);
     }
 
     @Test
