@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @EqualsAndHashCode(of = {"id"})
-@ToString(of = {"id", "writer"})
+@ToString(of = {"id", "content"})
 public class Comment extends BaseEntity {
 
     @Id

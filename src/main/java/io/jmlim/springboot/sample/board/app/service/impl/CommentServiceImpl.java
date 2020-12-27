@@ -35,7 +35,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public CommentResponse save(long boardId, CommentSaveRequest request) {
         Board board = this.getBoard(boardId);
-        request.setBoard(board);
+       // request.setBoard(board);
 
         log.debug("----> board: {}", board);
 
